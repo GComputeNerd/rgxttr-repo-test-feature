@@ -2,12 +2,18 @@
 import csv
 import bullet
 import os
-from pyfiglet import Figlet
+
+def banner() :
+    os.system('clear')
+    print("  ______          __")
+    print(" /_  __/__  _____/ /_")
+    print("  / / / _ \/ ___/ __/")
+    print(" / / /  __(__  ) /_")
+    print("/_/  \___/____/\__/ \n\n")
 
 # Prints the Test Banner
 os.system("clear")
-print(Figlet(font='slant').renderText("Test"))
-
+banner()
 # Initial Interface
 mode = bullet.Bullet(
         "Find Project by :",
@@ -24,7 +30,7 @@ isFound = False
 if (mode == "Get File by ID") :
     while (isFound == False):
         os.system("clear")
-        print(Figlet(font='slant').renderText("Test"))
+        banner()
         print("Enter 0 to exit")
         ID = int(input("ID: "))
         if (ID > 0 and ID <= len(catalog)):
@@ -38,7 +44,7 @@ elif (mode == "Browse Full Catalog") :
     lim = (len(catalog)-1)//10
     while (isFound == False):
         os.system("clear")
-        print(Figlet(font='slant').renderText("Test"))
+        banner()
         if (i < lim):
             ID = bullet.Bullet(
                     "Page Number %s/%s" %(i+1,lim+1),
